@@ -1,0 +1,45 @@
+body{
+    margin:0;
+    display: flex;
+    justify-content: center;
+    height:100vh;
+    align-items: center;
+    background-color: aliceblue;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.btn{
+    background-color: pink;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color:white;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn span{
+    position: relative;
+    z-index: 1;
+
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    background-color: orange;
+    width: 0;
+    height: 0;
+    left:var(--xPos);
+    right:var(--yPos);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    position: center;
+    transition: width 0.5s, height 0.5s;
+}
+
+.btn:hover::before{
+    width: 300px;
+    height: 300px;
+}
